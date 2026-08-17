@@ -51,6 +51,7 @@ export const metadata: Metadata = {
   },
   other: {
     "msapplication-TileColor": "#16324f",
+    "naver-site-verification": "6e8f401b647dbef4e99061afb708c9a4702777ef",
   },
 };
 
@@ -66,6 +67,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <head>
+        <meta
+          name="naver-site-verification"
+          content="6e8f401b647dbef4e99061afb708c9a4702777ef"
+        />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
         <link rel="preconnect" href="https://image.cattery.co.kr" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
