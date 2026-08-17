@@ -44,7 +44,8 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <Link
             href="/agencies"
-            className="hidden rounded-full bg-[var(--navy)] px-3.5 py-2 text-sm font-bold text-white md:inline-flex"
+            className="header-cta hidden md:inline-flex"
+            style={{ backgroundColor: "#111827", color: "#ffffff" }}
           >
             {CTA_LABEL}
           </Link>
@@ -74,7 +75,8 @@ export default function Header() {
             ))}
             <Link
               href="/agencies"
-              className="mt-1 inline-flex items-center justify-center rounded-xl bg-[var(--navy)] px-3 py-2.5 text-sm font-semibold text-white"
+              className="header-cta mt-1 w-full"
+              style={{ backgroundColor: "#111827", color: "#ffffff" }}
               onClick={() => setOpen(false)}
             >
               {CTA_LABEL}
