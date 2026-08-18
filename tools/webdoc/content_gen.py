@@ -17,7 +17,7 @@ from typing import Any, Dict, List
 from urllib.parse import quote
 
 from nearby_geo import extract_region, extract_theme, nearby_areas, nearby_html_blocks, nearby_keyword_csv, nearby_stations
-from gemini_gen import build_gemini_page
+from gemini_gen import DEFAULT_MODEL, build_gemini_page
 
 BRAND = "국제결혼정보원"
 FARM = "국제결혼 정보"
@@ -242,7 +242,7 @@ def write_html(page: Dict[str, Any], site_url: str) -> str:
 {sections}
 <section><h2>자주 묻는 질문</h2>{faqs}</section>
 {nearby}
-<p><a href="tel:{PHONE_TEL}">{page['ctaText']}</a></p>
+<p><a href="{site_url.rstrip('/')}/agencies">{page['ctaText']}</a></p>
 </article>
 </body>
 </html>"""
@@ -256,7 +256,7 @@ def generate_batch(
     stop_requested=None,
     gen_mode: str = "template",
     gemini_api_key: str = "",
-    gemini_model: str = "gemini-2.5-flash",
+    gemini_model: str = DEFAULT_MODEL,
     gemini_prompt: str = "",
     on_log=None,
 ) -> List[str]:
@@ -280,7 +280,7 @@ def generate_batch(
                     kw,
                     i,
                     api_key=gemini_api_key,
-                    model=gemini_model or "gemini-2.5-flash",
+                    model=gemini_model or DEFAULT_MODEL,
                     user_prompt=gemini_prompt or "",
                     slugify_fn=slugify,
                     image_urls_fn=image_urls,

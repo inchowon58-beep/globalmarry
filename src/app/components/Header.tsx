@@ -45,7 +45,6 @@ export default function Header() {
           <Link
             href="/agencies"
             className="header-cta hidden md:inline-flex"
-            style={{ backgroundColor: "#111827", color: "#ffffff" }}
           >
             {CTA_LABEL}
           </Link>
@@ -76,7 +75,6 @@ export default function Header() {
             <Link
               href="/agencies"
               className="header-cta mt-1 w-full"
-              style={{ backgroundColor: "#111827", color: "#ffffff" }}
               onClick={() => setOpen(false)}
             >
               {CTA_LABEL}

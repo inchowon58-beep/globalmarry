@@ -47,7 +47,7 @@ body {
   font-family: var(--font);
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
-  padding-bottom: 11.5rem;
+  padding-bottom: 8.5rem;
 }
 
 h1,
@@ -218,16 +218,16 @@ img {
   justify-content: center;
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
-  background: #111827;
+  background: var(--navy);
   color: #ffffff !important;
   font-size: 0.875rem;
   font-weight: 800;
-  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.28);
+  box-shadow: 0 6px 16px rgba(22, 50, 79, 0.28);
 }
 
 .header-cta:hover {
   color: #ffffff !important;
-  background: #000000;
+  background: var(--teal);
 }
 
 .fixed-cta {
@@ -251,12 +251,6 @@ img {
   gap: 0.4rem;
 }
 
-.fixed-cta-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.4rem;
-}
-
 .fixed-cta-call,
 .fixed-cta-build {
   display: inline-flex;
@@ -268,15 +262,16 @@ img {
   font-weight: 800;
   font-size: 0.95rem;
   color: #ffffff !important;
-  background: #111827;
-  border: 2px solid #111827;
-  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.35);
+  background: var(--navy);
+  border: 2px solid var(--navy);
+  box-shadow: 0 8px 20px rgba(22, 50, 79, 0.28);
 }
 
 .fixed-cta-call:hover,
 .fixed-cta-build:hover {
   color: #ffffff !important;
-  background: #000000;
+  background: var(--teal);
+  border-color: var(--teal);
 }
 
 .soft-card {
