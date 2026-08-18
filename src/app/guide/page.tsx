@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { listPageSummaries, pagePath } from "@/lib/seo-pages";
-import { SITE } from "@/lib/site";
+import { SITE, absoluteUrl } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   title: "국제결혼 정보 가이드",
   description: `${SITE.name} 절차·비용·국가별 국제결혼 안내글 모음`,
   keywords: [...SITE.keywords, "국제결혼가이드"],
-  alternates: { canonical: `${SITE.siteUrl}/guide` },
+  alternates: { canonical: absoluteUrl("/guide") },
   openGraph: {
     title: `국제결혼 정보 가이드 | ${SITE.name}`,
     description: `${SITE.name} 절차·비용·피해 예방 가이드`,
-    url: `${SITE.siteUrl}/guide`,
+    url: absoluteUrl("/guide"),
     images: [{ url: SITE.logo, alt: SITE.name }],
   },
 };

@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { ShieldCheck } from "lucide-react";
-import { SITE } from "@/lib/site";
+import { SITE, absoluteUrl } from "@/lib/site";
 import AgencyCards from "@/app/components/AgencyCards";
 
 export const metadata: Metadata = {
   title: "검증된 국제결혼 업체 비교 및 안내",
   description: `${SITE.name}는 정부 정식 등록 국제결혼 중개업체 정보만 제공합니다. 계약 전 체크리스트를 확인하세요.`,
   keywords: [...SITE.keywords, "국제결혼업체비교", "결혼중개업등록"],
-  alternates: { canonical: `${SITE.siteUrl}/agencies` },
+  alternates: { canonical: absoluteUrl("/agencies") },
   openGraph: {
     title: `검증된 국제결혼 업체 비교 및 안내 | ${SITE.name}`,
     description: "정부 정식 등록 업체 정보만 안내합니다.",
-    url: `${SITE.siteUrl}/agencies`,
+    url: absoluteUrl("/agencies"),
     images: [{ url: SITE.logo, alt: SITE.name }],
   },
 };

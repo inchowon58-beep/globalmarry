@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE } from "@/lib/site";
+import { SITE, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침",
   description: `${SITE.name} 개인정보처리방침`,
   robots: { index: true, follow: true },
-  alternates: { canonical: `${SITE.siteUrl}/privacy` },
+  alternates: { canonical: absoluteUrl("/privacy") },
+  openGraph: {
+    title: `개인정보처리방침 | ${SITE.name}`,
+    description: `${SITE.name} 개인정보처리방침`,
+    url: absoluteUrl("/privacy"),
+    images: [{ url: SITE.logo, alt: SITE.name }],
+  },
 };
 
 export default function PrivacyPage() {

@@ -16,7 +16,7 @@ except ImportError:  # pragma: no cover
 INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
 # Next public/{key}.txt 와 동일
 DEFAULT_KEY = "b7e4d9c2a1f8563048e7b6c5d4a39281"
-DEFAULT_HOST = "gukjeinfo.vercel.app"
+DEFAULT_HOST = "globalmarry.vercel.app"
 
 
 def get_indexnow_key() -> str:
@@ -52,7 +52,7 @@ def submit_indexnow(
     url_list: List[str] = []
     seen = set()
     for u in urls:
-        u = (u or "").strip()
+        u = (u or "").strip().rstrip("/")
         if u and u not in seen:
             seen.add(u)
             url_list.append(u)

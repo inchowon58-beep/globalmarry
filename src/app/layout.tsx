@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { SITE } from "@/lib/site";
+import { SITE, absoluteUrl } from "@/lib/site";
 import { faqJsonLd, orgJsonLd } from "@/lib/faq-data";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -7,7 +7,7 @@ import FixedCTA from "./components/FixedCTA";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.siteUrl),
+  metadataBase: new URL(absoluteUrl("/")),
   title: {
     default: `${SITE.name} | 국제결혼 정보·정식등록업체`,
     template: `%s | ${SITE.brand}`,
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   authors: [{ name: SITE.name }],
   creator: SITE.name,
   publisher: SITE.name,
-  alternates: { canonical: SITE.siteUrl },
+  alternates: { canonical: absoluteUrl("/") },
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: SITE.siteUrl,
+    url: absoluteUrl("/"),
     siteName: SITE.name,
     title: `${SITE.name} | 국제결혼 정보·정식등록업체`,
     description: SITE.description,

@@ -10,7 +10,7 @@ from typing import Any, Dict
 from project_paths import webdoc_dir
 
 DEFAULT_VM_PATH = ""
-DEFAULT_SITE_URL = "https://gukjeinfo.vercel.app"
+DEFAULT_SITE_URL = "https://globalmarry.vercel.app"
 
 
 def settings_path() -> str:
@@ -47,7 +47,7 @@ def default_settings() -> Dict[str, Any]:
         "schedule_last_run_date": "",
         "gen_mode": "template",
         "gemini_api_key": "",
-        "gemini_model": "gemini-2.5-flash",
+        "gemini_model": "gemini-3.5-flash-lite",
         "gemini_prompt": (
             "톤: 신뢰감 있는 국제결혼 정보 안내. 과장·허위·성공 보장 표현 금지.\n"
             "키워드에 지역명이 있으면 그 지역에서 정보를 찾는 독자 시점으로 쓰세요.\n"
