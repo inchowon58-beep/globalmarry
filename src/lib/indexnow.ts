@@ -10,7 +10,7 @@ function siteHost(): string {
   try {
     return new URL(absoluteUrl("/")).host;
   } catch {
-    return "globalmarry.vercel.app";
+    return "www.globalmarry.co.kr";
   }
 }
 

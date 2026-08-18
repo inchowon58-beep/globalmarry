@@ -10,7 +10,7 @@ from typing import Any, Dict
 from project_paths import webdoc_dir
 
 DEFAULT_VM_PATH = ""
-DEFAULT_SITE_URL = "https://globalmarry.vercel.app"
+DEFAULT_SITE_URL = "https://www.globalmarry.co.kr"
 
 
 def settings_path() -> str:

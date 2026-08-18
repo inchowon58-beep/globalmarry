@@ -1,9 +1,8 @@
 /** 국제결혼정보원 — 사이트 공통 설정 */
 
-const FALLBACK_ORIGIN = "https://globalmarry.vercel.app";
-const RETIRED_HOSTS = new Set(["gukjeinfo.vercel.app"]);
+const FALLBACK_ORIGIN = "https://www.globalmarry.co.kr";
 
-/** 수집기(Yeti)가 200을 받는 최종 공개 주소. 끝 슬래시 없음, https 고정. */
+/** 수집기(Yeti)가 200을 받는 최종 공개 주소. 끝 슬래시 없음, https·www 고정. */
 export function publicOrigin(): string {
   const raw = (process.env.NEXT_PUBLIC_SITE_URL || FALLBACK_ORIGIN).trim();
   try {
@@ -11,7 +10,12 @@ export function publicOrigin(): string {
     if (u.hostname === "localhost" || u.hostname === "127.0.0.1") {
       return u.origin.replace(/\/$/, "");
     }
-    if (RETIRED_HOSTS.has(u.hostname)) {
+    // 미리보기/구 호스트·비www는 수집용 최종 도메인으로 통일
+    if (
+      u.hostname.endsWith(".vercel.app") ||
+      u.hostname === "globalmarry.co.kr" ||
+      u.hostname === "gukjeinfo.vercel.app"
+    ) {
       return FALLBACK_ORIGIN;
     }
     u.protocol = "https:";
